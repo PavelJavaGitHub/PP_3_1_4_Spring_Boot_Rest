@@ -128,7 +128,7 @@ editingUserForm.addEventListener('click', (e) => {
     e.preventDefault()
 
     if (e.target.id == 'editButton') {
-        fetch(`http://localhost:8080/user/getOne?id=${e.target.dataset.uid}`)
+        fetch(`http://localhost:8080/api/getUser?id=${e.target.dataset.uid}`)
             .then(res => res.json())
             .then(data => {
                 $('#idEdit').val(data.id)
@@ -142,7 +142,7 @@ editingUserForm.addEventListener('click', (e) => {
                 $('#editModal').modal()
             });
     } else if (e.target.id == 'deleteButton') {
-        fetch(`http://localhost:8080/user/getOne?id=${e.target.dataset.uid}`)
+        fetch(`http://localhost:8080/api/getUser?id=${e.target.dataset.uid}`)
             .then(res => res.json())
             .then(data => {
                 $('#idDelete').val(data.id)

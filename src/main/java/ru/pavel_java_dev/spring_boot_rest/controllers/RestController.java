@@ -50,6 +50,14 @@ public class RestController {
         userDetailsServiceImpl.deleteUserById(id);
     }
 
+
+
+    @RequestMapping("/getUser")
+    @ResponseBody
+    public User getUserById(long id) {
+        return userDetailsServiceImpl.getUserById(id);
+    }
+
     @GetMapping("/getActiveUser")
     public User getActiveUser(@AuthenticationPrincipal User user) {
         return userDetailsServiceImpl.getUserById(user.getId());
