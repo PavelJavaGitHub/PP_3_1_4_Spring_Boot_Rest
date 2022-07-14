@@ -51,7 +51,6 @@ public class RestController {
     }
 
 
-
     @RequestMapping("/getUser")
     @ResponseBody
     public User getUserById(long id) {
